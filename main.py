@@ -1,8 +1,18 @@
 print("palindrome detector")
+
+#preparing to disregard special characters
+from string import punctuation
+special = []
+for i in range(len(punctuation)):
+  special.append(punctuation[i])
+
 while True:
-  #user inserts word
+  #user inserts word (disregarding spaces/special characters)
   print()
   word = input("enter a word, number, or phrase: ").replace(" ", "")
+
+  for i in range(len(special)):
+    word = word.replace(special[i],"")
 
   #character lists
   allCharacters = []
